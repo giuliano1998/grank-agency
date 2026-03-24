@@ -1,0 +1,55 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx prettier --write $file_path --config .prettierrc.json 2>/dev/null || true",
+            "description": "Formatea automáticamente archivos con Prettier después de que Claude Code los edita"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "notification",
+            "title": "Build completado",
+            "description": "Verifica que el build pasó sin errores"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit.*\\.env|next\\.config|tsconfig|vercel\\.json",
+        "hooks": [
+          {
+            "type": "block",
+            "reason": "Estos archivos no deben ser modificados. Son configuraciones críticas del proyecto."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '✅ Sesión de Claude Code completada. Verificá que los cambios están listos para pushear.'",
+            "description": "Recordatorio al terminar"
+          }
+        ]
+      }
+    ]
+  },
+  "autoMemoryEnabled": true,
+  "memoryLimit": 200,
+  "preferences": {
+    "languageStyle": "es-ES",
+    "codeStyle": "concise",
+    "responseLength": "concise"
+  }
+}
