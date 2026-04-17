@@ -1,37 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GrankAgency
 
-## Getting Started
+A full-stack marketing automation agency platform.
 
-First, run the development server:
+## 🎯 Purpose
+
+- High-converting landing pages
+- Automated lead capture via contact forms
+- Email nurturing sequences (Brevo)
+- Workflow automation (N8N)
+- Calendar scheduling (Calendly)
+- Analytics & conversion tracking (GA4/GTM)
+
+## 🛠️ Tech Stack
+
+| Component | Technology |
+|---|---|
+| Frontend | Next.js 14 + React + TypeScript |
+| Styling | Tailwind CSS |
+| Deployment | Vercel |
+| CRM/Email | Brevo API |
+| Automation | N8N |
+| Analytics | GA4 + GTM |
+| Calendar | Calendly API |
+
+## ✨ Key Features
+
+- Responsive landing page with animated sections
+- Contact form with real-time validation
+- Email automation sequences (Brevo)
+- Workflow triggers (N8N webhooks)
+- Calendar integration for demo scheduling
+- Analytics tracking for conversion optimization
+- Service showcase with testimonials
+- Mobile-optimized design
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- Vercel account
+- Brevo account
+- N8N account
+
+### Local Development
+
+1. Clone: `git clone https://github.com/giuliano1998/grank-agency.git`
+2. Install: `npm install`
+3. Setup env: `cp .env.example .env.local` (edit with your keys)
+4. Run: `npm run dev`
+5. Open: http://localhost:3000
+
+### Build for Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+grank-agency/
+├── app/
+│   ├── page.tsx          (Landing page)
+│   ├── layout.tsx        (Global layout)
+│   ├── contact/          (Contact page)
+│   ├── portfolio/        (Case studies)
+│   └── services/         (Service details)
+├── components/
+│   ├── Header.tsx        (Navigation)
+│   ├── Footer.tsx        (Footer)
+│   ├── ContactForm.tsx   (Lead capture)
+│   ├── ServiceCard.tsx   (Service display)
+│   └── AnimatedSection.tsx
+├── public/               (Static assets)
+├── .env.example
+├── ARCHITECTURE.md       (System design)
+├── next.config.ts
+└── tailwind.config.ts
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔗 API Integration
 
-## Learn More
+**Brevo:** Email automation triggered on form submission
 
-To learn more about Next.js, take a look at the following resources:
+**N8N:** Complex workflows (WhatsApp, calendar, analytics)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Calendly:** Demo scheduling
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**GA4/GTM:** Conversion tracking
 
-## Deploy on Vercel
+## 📊 Analytics
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+GA4 tracks:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# Updated
+- Form views
+- Form submissions
+- Calendar clicks
+- Service page views
+- Testimonial interactions
+
+## 🚢 Deployment
+
+1. Push to GitHub
+2. Connect to Vercel
+3. Add environment variables in Vercel dashboard
+4. Auto-deploys on push
+
+## 🔐 Security
+
+✅ All API keys in environment variables
+✅ No credentials in source code
+✅ Form validation on client & server
+✅ CORS configured for Vercel
+✅ .env.local in .gitignore
+
+## 📚 Documentation
+
+- [ARCHITECTURE.md](./ARCHITECTURE.md) — System design & data flows
+- [docs/AUTOMATION_FLOWS.md](./docs/AUTOMATION_FLOWS.md) — Automation workflow details
+- GUIA_INSTALACION.md — Installation guide (Spanish)
+
+## 📄 License
+
+MIT License
+
+---
+
+Built with Next.js, TypeScript, and modern marketing automation tools.
